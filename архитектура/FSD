@@ -1,0 +1,207 @@
+src/
+├── ⁡⁢⁣⁢app/
+│   ├── styles/
+│   │   ├── globals.css           # Tailwind директивы
+│   │   └── normalize.css         # Сброс стилей
+│   ├── providers/
+│   │   ├── app-router.tsx
+│   │   ├── app-store.tsx
+│   │   ├── socket-provider.tsx   # WebSocket провайдер
+│   │   └── index.ts
+│   ├── entry.tsx
+│   └── index.html⁡
+│
+├──⁡⁣⁢⁢ pages/
+│   ├── login/
+│   ├── register/
+│   ├── chat/
+│   │   ├── ui/
+│   │   │   └── chat-page.tsx
+│   │   └── index.ts
+│   ├── settings/
+│   └── index.ts⁡
+│
+├──⁡⁢⁢⁢ widgets/
+│   ├── layout/                    # Основной лейаут
+│   │   ├── ui/
+│   │   │   ├── layout.tsx
+│   │   │   └── layout-header.tsx
+│   │   └── index.ts
+│   │
+│   ├── sidebar/                   # Боковая панель
+│   │   ├── ui/
+│   │   │   ├── sidebar.tsx
+│   │   │   ├── sidebar-chats.tsx
+│   │   │   └── sidebar-user.tsx
+│   │   └── index.ts
+│   │
+│   ├── chat-window/              # Основной виджет чата
+│   │   ├── ui/
+│   │   │   ├── chat-window.tsx
+│   │   │   ├── chat-header.tsx
+│   │   │   └── chat-empty.tsx
+│   │   └── index.ts
+│   │
+│   ├── message-list/             # Виртуализированный список
+│   │   ├── ui/
+│   │   │   ├── message-list.tsx
+│   │   │   └── message-group.tsx
+│   │   └── index.ts
+│   │
+│   ├── message-input/            # Блок ввода
+│   │   ├── ui/
+│   │   │   ├── message-input.tsx
+│   │   │   ├── message-attachments.tsx
+│   │   │   └── message-actions.tsx
+│   │   └── index.ts
+│   │
+│   └── contacts-panel/          ⁡ # Панель контактов
+│
+├── ⁡⁢⁢⁣features/
+│   ├── auth/                     # Авторизация
+│   │   ├── api/
+│   │   │   └── auth-api.ts       # Axios запросы
+│   │   ├── model/
+│   │   │   ├── types/
+│   │   │   ├── slice/
+│   │   │   └── selectors/
+│   │   ├── lib/
+│   │   │   └── tokens.ts         # Работа с токенами
+│   │   └── ui/
+│   │       └── auth-form.tsx
+│   │
+│   ├── chat/                     # Логика чата
+│   │   ├── api/
+│   │   │   └── chat-api.ts
+│   │   ├── model/
+│   │   │   ├── types/
+│   │   │   │   ├── message.types.ts
+│   │   │   │   └── chat.types.ts
+│   │   │   ├── slice/
+│   │   │   │   └── chat-slice.ts
+│   │   │   └── selectors/
+│   │   │       └── chat-selectors.ts
+│   │   ├── lib/
+│   │   │   ├── hooks/
+│   │   │   │   ├── use-chat.ts
+│   │   │   │   └── use-messages.ts
+│   │   │   ├── utils/
+│   │   │   │   ├── message-parser.ts
+│   │   │   │   └── date-formatter.ts
+│   │   │   └── constants/
+│   │   └── ui/
+│   │       ├── message-bubble/
+│   │       ├── message-status/
+│   │       └── typing-indicator/
+│   │
+│   ├── websocket/                # WebSocket логика
+│   │   ├── api/
+│   │   │   └── socket-service.ts # Socket.io клиент
+│   │   ├── model/
+│   │   │   ├── types/
+│   │   │   │   └── socket.types.ts
+│   │   │   ├── slice/
+│   │   │   │   └── socket-slice.ts
+│   │   │   └── selectors/
+│   │   ├── lib/
+│   │   │   ├── hooks/
+│   │   │   │   ├── use-socket.ts
+│   │   │   │   └── use-socket-events.ts
+│   │   │   └── utils/
+│   │   │       └── connection-manager.ts
+│   │   └── ui/
+│   │       └── connection-status.tsx
+│   │
+│   ├── contacts/
+│   ├── notifications/
+│   ├── profile/
+│   └── search/                   # Поиск по сообщениям
+│
+├──⁡⁣⁢⁣ entities/
+│   ├── user/
+│   │   ├── api/
+│   │   ├── model/
+│   │   │   └── types/user.types.ts
+│   │   └── ui/
+│   │       ├── user-avatar.tsx
+│   │       └── user-card.tsx
+│   │
+│   ├── message/
+│   │   ├── model/
+│   │   │   └── types/
+│   │   │       ├── message.types.ts
+│   │   │       └── attachment.types.ts
+│   │   └── ui/
+│   │       └── message-content/
+│   │
+│   ├── chat/
+│   └── notification/
+│⁡
+├── ⁡⁢⁣⁣shared/
+│   ├── api/
+│   │   ├── http/                 # HTTP клиент
+│   │   │   ├── http-client.ts    # Axios инстанс
+│   │   │   ├── interceptors/
+│   │   │   │   ├── auth-interceptor.ts
+│   │   │   │   └── error-interceptor.ts
+│   │   │   └── types/
+│   │   │       └── api.types.ts
+│   │   │
+│   │   └── websocket/            # WebSocket клиент
+│   │       ├── socket-client.ts  # Socket.io инициализация
+│   │       └── socket-events.ts  # Типы событий
+│   │
+│   ├── ui/
+│   │   ├── kit/                  # Адаптированные Radix компоненты
+│   │   │   ├── dialog/
+│   │   │   ├── dropdown/
+│   │   │   ├── tabs/
+│   │   │   └── toast/
+│   │   │
+│   │   ├── layout/               # Компоненты лейаута
+│   │   │   ├── container.tsx
+│   │   │   └── divider.tsx
+│   │   │
+│   │   ├── form/                 # Формы
+│   │   │   ├── input.tsx
+│   │   │   ├── textarea.tsx
+│   │   │   └── button.tsx
+│   │   │
+│   │   ├── data-display/         # Отображение данных
+│   │   │   ├── avatar.tsx
+│   │   │   ├── badge.tsx
+│   │   │   └── skeleton.tsx
+│   │   │
+│   │   └── feedback/             # Обратная связь
+│   │       ├── spinner.tsx
+│   │       └── alert.tsx
+│   │
+│   ├── lib/
+│   │   ├── hooks/
+│   │   │   ├── use-debounce.ts
+│   │   │   ├── use-throttle.ts
+│   │   │   ├── use-local-storage.ts
+│   │   │   └── use-media-query.ts
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── date/
+│   │   │   │   └── format-date.ts
+│   │   │   ├── string/
+│   │   │   │   └── truncate.ts
+│   │   │   ├── file/
+│   │   │   │   └── file-utils.ts
+│   │   │   └── validation/
+│   │   │       └── validators.ts
+│   │   │
+│   │   ├── constants/
+│   │   │   ├── app.constants.ts
+│   │   │   └── socket.constants.ts
+│   │   │
+│   │   └── types/
+│   │       └── common.types.ts
+│   │
+│   └── config/
+│       ├── env.ts
+│       └── routes.ts⁡
+│⁡
+└── index.html
