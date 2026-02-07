@@ -20,6 +20,7 @@ export default defineConfig({
       '@features': path.resolve(__dirname, './src/features'),
       '@entities': path.resolve(__dirname, './src/entities'),
       '@shared': path.resolve(__dirname, './src/shared'),
+      '@store': path.resolve(__dirname, './src/store'),
     },
   },
   build: {

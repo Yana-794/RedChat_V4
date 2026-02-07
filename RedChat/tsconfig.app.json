@@ -31,10 +31,12 @@
       "@widgets/*": ["src/widgets/*"],
       "@features/*": ["src/features/*"],
       "@entities/*": ["src/entities/*"],
-      "@shared/*": ["src/shared/*"]
+      "@shared/*": ["src/shared/*"],
+      "@store/*": ["src/store/*"]
+
     },
     
   },
-  "include": ["src"],
+  "include": ["src", "env.ts", "src/app/routes.ts"],
   "exclude": ["node_modules", "dist"]
 }
